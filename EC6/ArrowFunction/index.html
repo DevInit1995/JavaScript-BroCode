@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Arrow Function
+      //Função tradicional:
+      function saudacao(nome) {
+        return `Olá, ${nome}!`;
+      }
+      //console.log(saudacao("Jhon Santos"));
+
+      //Função Arrow:
+      const saudacaoArrow = (nome) => {
+        return `Olá, ${nome}-2!`;
+      };
+      //console.log(saudacaoArrow("Jhon Santos"));
+
+      //Exercicios:
+      const dobrar = () => {
+        let value;
+        value = parseFloat(prompt("Digite um número:"));
+        return value * 2;
+      };
+      //console.log(dobrar());
+
+      /*1-Crie uma arrow function chamada saudar que receba um
+        nome e retorne uma mensagem como: "Olá, [nome]!"*/
+      const saudar = (nome) => {
+        return `Olá, ${nome}`;
+      };
+      //console.log(saudar("Jhon Santos"));
+
+      /*2-Crie uma arrow function chamada somar
+        que receba dois números e retorne a soma deles.*/
+      const somar = () => {
+        let recebe = 0;
+        for (let conta = 1; conta <= 2; conta++) {
+          let valor = parseFloat(prompt("Informe o " + conta + "° valor: "));
+          recebe += valor;
+        }
+        return recebe;
+      };
+      //console.log(`O valor da soma é ` + somar());
+
+      /*4-Crie uma arrow function chamada parOuImpar que receba
+        um número e retorne "Par" se for par, e "Ímpar" se for ímpar.*/
+      let parOuImpar = (valor) => {
+        if (valor % 2 == 0) {
+          console.log("O valor é par!");
+        } else if (valor % 2 == 1) {
+          console.log("O valor é impar!");
+        }
+        return valor;
+        return qualquer;
+      };
+      //let numero = parseFloat(prompt("Informe o valor: "));
+      //console.log(parOuImpar(numero));
+
+      /*5-Crie uma arrow function chamada maiorNumero que
+        receba dois números e retorne o maior deles.*/
+      const maiorNumero = () => {
+        let numero = [];
+        for (var conta = 1; conta <= 2; conta++) {
+          let valor = parseFloat(prompt("Informe o " + "°" + conta + " valor"));
+          numero.push(valor);
+        }
+
+        return Math.max(numero[0], numero[1]);
+      };
+      console.log(maiorNumero());
+    </script>
+  </body>
+</html>
