@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*JSON = (JavaScript Object NOtation) formato de troca de dados
+          usado para troca de dados entre um servidor e um aplicativo da web
+          Arquivos JSON {chave:valor} OU [valor1, valor2, valor3]
+
+          JSON.stringify() = converte um objeto JS em uma string JSON.
+          JSON.parse() = converte uma string JSON em um objeto JS*/
+      /*const jsonNames = `["Spongebob", "Patrick", "Squidward", "Sandy"]`;
+
+      const jsonPerson = `{
+        name: "Spongebob",
+        age: 30,
+        isEmployed: true,
+        hobbies: ["Jellyfishing", "Karate", "Cooking"]`;
+
+      const jsonPeople = `[
+        {
+          name: "Spongebob",
+          age: 34,
+          isEmployed: false,
+        },
+        {
+          name: "Patrick",
+          age: 34,
+          isEmployed: false,
+        },
+        {
+          name: "Squidward",
+          age: 50,
+          isEmployed: true,
+        },
+        {
+          name: "Sandy",
+          age: 27,
+          isEmployed: false,
+        },
+      ]`;
+
+      const parseData = JSON.parse(jsonPeople);
+      console.log(jsonPeople);*/
+
+      fetch("people.json")
+        .then((response) => response.json())
+        .then((values) => values.forEach((value) => console.log(value.age)));
+    </script>
+  </body>
+</html>

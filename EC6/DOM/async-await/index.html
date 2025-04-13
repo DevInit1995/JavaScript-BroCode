@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*Async/Await = Aync = faz uma função retornar uma
+      promessa Await = faz uma função async esperar por
+      uma promessa
+
+      Permite que você escreva código assíncrono de forma síncrona
+      Async não tem parâmetros resolve ou recect
+      Tudo depois de Await é colocado em uma fila de eventos*/
+      function walkDog() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const dogwalked = true;
+
+            if (dogwalked) {
+              resolve("You walk the dog 🐕​");
+            } else {
+              reject("You walk the dog");
+            }
+          }, 1500);
+        });
+      }
+
+      function cleanKitchen() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const kitchenCleaned = true;
+
+            if (kitchenCleaned) {
+              resolve("You clean the kitchen 🧹​");
+            } else {
+              reject("You DIDN'T clean the kitchen!");
+            }
+          }, 2500);
+        });
+      }
+
+      function takeOutTrash() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const trashTakenOut = true;
+
+            if (trashTakenOut) {
+              resolve("You take out the trash ♻️​");
+            } else {
+              reject("You DIDN'T take out the trasn");
+            }
+          }, 500);
+        });
+      }
+
+      async function doChores() {
+        try {
+          const walkDogResult = await walkDog();
+          console.log(walkDogResult);
+
+          const cleanKitchenResult = await cleanKitchen();
+          console.log(cleanKitchenResult);
+
+          const takeOutTrashResult = await takeOutTrash();
+          console.log(takeOutTrashResult);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      doChores();
+    </script>
+  </body>
+</html>

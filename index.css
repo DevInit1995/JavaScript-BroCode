@@ -1,0 +1,40 @@
+body {
+    font-family: Verdana;
+    text-align: center;
+  }
+
+  label {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  button {
+    margin-top: 15px;
+    background-color: hsl(0, 100%, 60%);
+    color: white;
+    font-size: 1.5em;
+    border: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #countLabel {
+    display: block;
+    text-align: center;
+    font-size: 10em;
+    font-family: Helvetica;
+  }
+
+  .buttons {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: white;
+    background-color: hsl(214, 100%, 74%);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+  }
+
+  .buttons:hover {
+    background-color: hsl(214, 100%, 74%);
+  }

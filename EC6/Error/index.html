@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error</title>
+  </head>
+  <body>
+    <script>
+      /*debugger;
+      //Enclotes code that might potentially cause an error
+      try {
+        console.log("Hello");
+        //Catch and handle any thrown Errors from try
+      } catch (error) {
+        console.log(error);
+        //optional Always executes Used mostly for clean up ex. close files, close connections, release resources
+      } finally {
+        console.log("Você sempre executa");
+      }
+      console.log("Você chegou ao fim!");*/
+
+      try {
+        debugger;
+        const dividend = Number(window.prompt("Enter a dividend: "));
+        const divisor = Number(window.prompt("Enter a divisor: "));
+
+        if (divisor == 0) {
+          throw new Error("Não se pode dividir por zero!");
+        }
+
+        if (isNaN(dividend) || isNaN(divisor)) {
+          throw new Error("Informe um valor númerico!");
+        }
+
+        const result = dividend / divisor;
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
+    </script>
+  </body>
+</html>
