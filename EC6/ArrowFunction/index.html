@@ -72,7 +72,70 @@
 
         return Math.max(numero[0], numero[1]);
       };
-      console.log(maiorNumero());
+      //console.log(maiorNumero());
+
+      /*1. Calcular a média final (usando a ponderação da UFAM) dadas as notas dos três exercícios 
+      escolares e a nota da prova final e produzir uma saída com a média e a situação do aluno de 
+      acordo com o seguinte critério:  
+      média >= 5, aprovado; média < 5, reprovado e falido.  
+      PS: A média dos exercícios escolares é a média aritmética simples.  Faça uma pesquisa 
+      para descobrir como é calculada a média final pela UFAM.*/
+
+      const media = () => {
+        var soma = 0,
+          valor,
+          resultado;
+
+        for (var conta = 1; conta <= 3; conta++) {
+          valor = parseFloat(prompt("Informe o " + conta + "°" + " valor"));
+          soma += valor;
+          resultado = soma / 3;
+        }
+
+        var notaProva = parseFloat(prompt("Informe o valor da prova: "));
+        var mediaFinal = (resultado * 2 + notaProva * 3) / (2 + 3);
+
+        console.log(
+          "A média dos exercícios é: " +
+            resultado +
+            "\nA média final é: " +
+            mediaFinal
+        );
+
+        if (mediaFinal >= 5) {
+          alert("Aprovado.");
+        } else {
+          alert("Reprovado.");
+        }
+      };
+      //media();
+
+      //-----------------------------------------
+
+      /*2. Ler dois números inteiros, x e y, e imprimir o quociente e o resto da divisão inteira entre eles.*/
+      const divisao = () => {
+        var valores = [],
+          resultado;
+        for (cont = 1; cont <= 2; cont++) {
+          var valor = parseFloat(prompt("Informe o " + cont + "°" + " valor"));
+          valores.push(valor);
+        }
+
+        resultado = valores[0] / valores[1];
+
+        alert(
+          "O resultado da divisão é: " +
+            resultado +
+            "\n O resto da divisão é: " +
+            (valores[0] % valores[1])
+        );
+      };
+      divisao();
+
+      /*3. Que informe a área e o volume de um cilindro.*/
+
+      /*4. Para ler dois valores reais do teclado, calcular e imprimir na tela:  
+      a) A soma destes valores b) O produto deles c) O quociente entre eles */
     </script>
   </body>
 </html>

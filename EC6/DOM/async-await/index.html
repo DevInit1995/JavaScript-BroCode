@@ -14,7 +14,7 @@
       Permite que você escreva código assíncrono de forma síncrona
       Async não tem parâmetros resolve ou recect
       Tudo depois de Await é colocado em uma fila de eventos*/
-      function walkDog() {
+      /*function walkDog() {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             const dogwalked = true;
@@ -70,7 +70,138 @@
           console.log(error);
         }
       }
-      doChores();
+      doChores();*/
+
+      //torne-se um programador
+      //Exemplo-01
+      /*setTimeout(function () {
+        console.log("Carro lavado");
+      }, 8000);
+
+      setTimeout(function () {
+        console.log("Já fiz o passeio com o cachorro");
+      }, 1000);*/
+
+      //Exemplo-02 - programação funcional
+      /*function resolveProblema() {
+        return "sync";
+      }
+
+      function resolveProblema2() {
+        return "sync2";
+      }
+
+      function resolveProblema3() {
+        return "sync3";
+      }
+
+      var retorno = resolveProblema();
+      alert(retorno);
+
+      var retorno2 = resolveProblema2();
+      alert(retorno2);
+
+      var retorno3 = resolveProblema3();
+      alert(retorno3);
+
+      //programação assincrona
+
+      /*function resolveProblema(callback) {
+        callback.call(null, "async");
+      }
+
+      function resolveProblema2(callback) {
+        callback.call(null, "async2");
+      }
+
+      function resolveProblema3(callback) {
+        callback.call(null, "async3");
+      }
+
+      resolveProblema(function (mensagem) {});
+      resolveProblema2();
+      resolveProblema3();*/
+
+      //2. Promises
+      /*const promessa = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("Pronto!");
+        }, 1000);
+      });
+
+      promessa.then((mensagem) => {
+        console.log(mensagem);
+      });*/
+
+      //3. async/await
+      //É o jeito mais limpo de escrever código assíncrono
+      /*const carregarDados = async () => {
+        console.log("Carregando...");
+
+        const dados = await fetch(
+          "'http://www.omdbapi.com/?t=Inception&apikey=SUA_API_KEY'"
+        );
+        const json = await dados.json();
+
+        console.log("Dados recebidos: " + json);
+      };
+
+      carregarDados();*/
+
+      //4. Usando setTimeout (simulação assíncrona simples):
+      /*let senha = 123;
+      console.log();
+      senha = parseInt(prompt("Informe a senha: "));
+      setTimeout(() => {
+        if (senha === 123) {
+          alert("Acesso logado.");
+        } else {
+          alert("Senha incorreta!");
+        }
+      }, 3000);
+
+      console.log("Inicio");
+      setTimeout(() => {
+        console.log("Executou depois de 2 segundos");
+      }, 2000);
+      console.log("Fim");*/
+
+      //5.Usando setInterval (executando de tempos em tempos):
+      /*setInterval(() => {
+        console.log("Executando a cada 1 segundo");
+      }, 1000);*/
+
+      //6.Criando uma Promise básica:
+      /*const promessa = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("Promessa resolvida!");
+        }, 1500);
+      });
+
+      promessa.then((msg) => console.log(msg));*/
+
+      //6.Promise com reject:
+      /*const promessaErro = new Promise((resolve, reject) => {
+        let sucesso = false;
+
+        if (sucesso) {
+          resolve("Sucesso!");
+        } else {
+          reject("Ocorreu um erro.");
+        }
+      });
+
+      promessaErro
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));*/
+
+      //7.Encadeando .then() (Promise chaining):
+      new Promise((resolve) => {
+        setTimeout(() => resolve(5), 1000);
+      })
+        .then((valor) => valor * 2)
+        .then((valor) => valor + 3)
+        .then((resultado) => console.log(resultado));
     </script>
   </body>
 </html>
