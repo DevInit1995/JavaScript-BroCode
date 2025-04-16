@@ -196,12 +196,103 @@
         .catch((err) => console.log(err));*/
 
       //7.Encadeando .then() (Promise chaining):
-      new Promise((resolve) => {
+      /*new Promise((resolve) => {
         setTimeout(() => resolve(5), 1000);
       })
         .then((valor) => valor * 2)
         .then((valor) => valor + 3)
         .then((resultado) => console.log(resultado));
+      */
+
+      //8.Função assíncrona com async/await:
+      /*async function exemplo() {
+        const resultado = await Promise.resolve("Com await!");
+        console.log(resultado);
+      }
+      exemplo();*/
+
+      //9.Usando fetch com .then():
+      /*fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then((res) => res.json())
+        .then((data) => console.log(data));*/
+
+      //10.Usando fetch com async/await:
+      /*async function buscarPost() {
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        const post = await res.json();
+        console.log(post);
+      }
+      buscarPost();*/
+
+      //10.Função que simula uma tarefa demorada com Promise:
+      /*const esperar = (ms) => {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      };
+
+      async function executar() {
+        console.log("Esperando...");
+        await esperar(2000);
+        console.log("Terminou a espera!");
+      }
+      executar();*/
+
+      //11.Promise com finally():
+      /*Promise.resolve("OK")
+        .then((res) => console.log(res))
+        .finally(() => console.log("Sempre executa no final"));*/
+
+      //12.Tratando erro com try/catch e async/await:
+      /*async function exemploErro() {
+        try {
+          const res = await fetch("https://api.invalida.com");
+          const dados = await res.json();
+          console.log(dados);
+        } catch (erro) {
+          console.log("Erro ao buscar dados: " + erro);
+        }
+      }
+      exemploErro();*/
+
+      //13.Usando .all() para múltiplas Promises:
+      /*Promise.all([
+        fetch("https://jsonplaceholder.typicode.com/posts/1").then((r) =>
+          r.json()
+        ),
+        fetch("https://jsonplaceholder.typicode.com/posts/2").then((r) =>
+          r.json()
+        ),
+      ]).then((resultados) => {
+        console.log("Posts:" + resultados);
+      });*/
+
+      //14.Usando Promise.race() (retorna o mais rápido)
+      /*const p1 = new Promise((r) => setTimeout(() => r("Primeira"), 3000));
+      const p2 = new Promise((r) => setTimeout(() => r("Segunda"), 1000));
+
+      Promise.race([p1, p2]).then((res) => console.log(res));*/
+
+      //15.Delay com função assíncrona reutilizável
+      /*const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      async function animarTexto() {
+        console.log("Carregando...");
+        await delay(1000);
+        console.log("Quase lá...");
+        await delay(3000);
+        console.log("Pronto!");
+      }
+      animarTexto();*/
+
+      //16.Exemplo prático simulando carregamento de API:
+      async function carregarUsuario(id) {
+        console.log("Buscando usuário...");
+        const resposta = await fetch(
+          `https://jsonplaceholder.typicode.com/users/${id}`
+        );
+        const usuario = await resposta.json();
+        console.log("Usuário encontrado: " + usuario.name);
+      }
+      carregarUsuario(3);
     </script>
   </body>
 </html>
