@@ -6,293 +6,716 @@
     <title>Document</title>
   </head>
   <body>
+    <div>
+      <h1>
+        2. Dado o tamanho do lado de um quadrado, calcular a área e o perímetro
+        do mesmo.
+      </h1>
+      <label for="lado">Informe o lado: </label>
+      <input type="number" id="lado" />
+      <button type="button" id="calcularBtn">Calcular</button>
+      <p id="areaResult"></p>
+      <p id="perimetroResult"></p>
+    </div>
+
+    <div>
+      <h1>
+        3. Dado o tamanho do raio de uma circunferência, calcular a área e o
+        perímetro da mesma.
+      </h1>
+      <label for="raio">Informe o raio:</label>
+      <input type="number" id="raio" />
+      <button type="button" id="btnCalcular">Calcular</button>
+
+      <p id="resultArea"></p>
+      <p id="resultPerimetro"></p>
+    </div>
+
+    <div>
+      <h1>
+        4. Dado os três lados de um triângulo determinar o perímetro do mesmo.
+      </h1>
+      <label for="ladoTriangulo">Informe o lado: </label>
+      <input type="number" id="ladoTriangulo" />
+      <button type="button" id="btnCalculo">Calcular</button>
+
+      <p id="perimetroResultTriangulo"></p>
+    </div>
+
+    <div>
+      <h1>5. Ler um número inteiro e exibir o seu sucessor.</h1>
+
+      <label for="numeroInteiro">Informe um valor inteiro: </label>
+      <input type="number" id="numeroInteiro" />
+      <button type="button" id="btnSucessor">Sucessor</button>
+
+      <p id="sucessorResultado"></p>
+    </div>
+
+    <div>
+      <h1>
+        6. Ler dois números inteiros e exibir o quociente e o resto da divisão
+        inteira entre eles.
+      </h1>
+
+      <label for="valor1">Informe o 1° valor: </label>
+      <input type="number" id="valor1" />
+      <br />
+      <label for="valor2">Informe o 2° valor: </label>
+      <input type="number" id="valor2" />
+      <button type="button" id="btnResto">Calcular</button>
+      <p id="quociente"></p>
+      <p id="resto"></p>
+    </div>
+
+    <div>
+      <h1>
+        7. Solicitar a idade de uma pessoa em dias e informar na tela a idade em
+        anos, meses e dias.
+      </h1>
+
+      <label for="idade">Idade: </label>
+      <input type="date" id="idade" />
+      <button type="button" id="btnProcessar">Processar</button>
+
+      <p id="anosC"></p>
+      <p id="mesesC"></p>
+      <p id="diasC"></p>
+    </div>
+
+    <div>
+      <h1>
+        8. Dado que a fórmula para conversão de Fahrenheit para Celsius é C =
+        5/9 (F – 32), leu um valor de temperatura em Fahrenheit e exibi-lo em
+        Celsius.
+      </h1>
+
+      <label for="lerFahrenheit">Fahrenheit:</label>
+      <input type="number" id="lerFahrenheit" />
+      <button type="button" id="btnConverter">Converter</button>
+      <p id="resultadoCelsius"></p>
+    </div>
+
+    <div>
+      <h1>
+        9. Faça um algoritmo que calcule e apresente o valor do volume de uma
+        lata de óleo, dado seu raio e sua altura.
+      </h1>
+      <label for="raio">Raio:</label>
+      <input type="number" id="raioLatas" />
+      <br />
+      <label for="altura">Altura:</label>
+      <input type="number" id="altura" />
+      <button type="button" id="btnCalcularVolume">Calcular</button>
+      <p id="volumesResult"></p>
+    </div>
+
+    <div>
+      <h1>
+        10. Converter um inteiro informado menor que 32 para sua representação
+        em binário
+      </h1>
+
+      <label for="valorInt">Informe o valor:</label>
+      <input type="number" id="valorInt" />
+      <button type="button" id="btnBinario">Representar</button>
+      <p id="binarioResult"></p>
+    </div>
+    <br />
+    <br />
+    <br />
+
     <script>
       /*Async/Await = Aync = faz uma função retornar uma
-      promessa Await = faz uma função async esperar por
-      uma promessa
+              promessa Await = faz uma função async esperar por
+              uma promessa
 
-      Permite que você escreva código assíncrono de forma síncrona
-      Async não tem parâmetros resolve ou recect
-      Tudo depois de Await é colocado em uma fila de eventos*/
+              Permite que você escreva código assíncrono de forma síncrona
+              Async não tem parâmetros resolve ou recect
+              Tudo depois de Await é colocado em uma fila de eventos*/
       /*function walkDog() {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            const dogwalked = true;
+                return new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    const dogwalked = true;
 
-            if (dogwalked) {
-              resolve("You walk the dog 🐕​");
-            } else {
-              reject("You walk the dog");
-            }
-          }, 1500);
-        });
-      }
+                    if (dogwalked) {
+                      resolve("You walk the dog 🐕​");
+                    } else {
+                      reject("You walk the dog");
+                    }
+                  }, 1500);
+                });
+              }
 
-      function cleanKitchen() {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            const kitchenCleaned = true;
+              function cleanKitchen() {
+                return new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    const kitchenCleaned = true;
 
-            if (kitchenCleaned) {
-              resolve("You clean the kitchen 🧹​");
-            } else {
-              reject("You DIDN'T clean the kitchen!");
-            }
-          }, 2500);
-        });
-      }
+                    if (kitchenCleaned) {
+                      resolve("You clean the kitchen 🧹​");
+                    } else {
+                      reject("You DIDN'T clean the kitchen!");
+                    }
+                  }, 2500);
+                });
+              }
 
-      function takeOutTrash() {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            const trashTakenOut = true;
+              function takeOutTrash() {
+                return new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    const trashTakenOut = true;
 
-            if (trashTakenOut) {
-              resolve("You take out the trash ♻️​");
-            } else {
-              reject("You DIDN'T take out the trasn");
-            }
-          }, 500);
-        });
-      }
+                    if (trashTakenOut) {
+                      resolve("You take out the trash ♻️​");
+                    } else {
+                      reject("You DIDN'T take out the trasn");
+                    }
+                  }, 500);
+                });
+              }
 
-      async function doChores() {
-        try {
-          const walkDogResult = await walkDog();
-          console.log(walkDogResult);
+              async function doChores() {
+                try {
+                  const walkDogResult = await walkDog();
+                  console.log(walkDogResult);
 
-          const cleanKitchenResult = await cleanKitchen();
-          console.log(cleanKitchenResult);
+                  const cleanKitchenResult = await cleanKitchen();
+                  console.log(cleanKitchenResult);
 
-          const takeOutTrashResult = await takeOutTrash();
-          console.log(takeOutTrashResult);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-      doChores();*/
+                  const takeOutTrashResult = await takeOutTrash();
+                  console.log(takeOutTrashResult);
+                } catch (error) {
+                  console.log(error);
+                }
+              }
+              doChores();*/
 
       //torne-se um programador
       //Exemplo-01
       /*setTimeout(function () {
-        console.log("Carro lavado");
-      }, 8000);
+                console.log("Carro lavado");
+              }, 8000);
 
-      setTimeout(function () {
-        console.log("Já fiz o passeio com o cachorro");
-      }, 1000);*/
+              setTimeout(function () {
+                console.log("Já fiz o passeio com o cachorro");
+              }, 1000);*/
 
       //Exemplo-02 - programação funcional
       /*function resolveProblema() {
-        return "sync";
-      }
+                return "sync";
+              }
 
-      function resolveProblema2() {
-        return "sync2";
-      }
+              function resolveProblema2() {
+                return "sync2";
+              }
 
-      function resolveProblema3() {
-        return "sync3";
-      }
+              function resolveProblema3() {
+                return "sync3";
+              }
 
-      var retorno = resolveProblema();
-      alert(retorno);
+              var retorno = resolveProblema();
+              alert(retorno);
 
-      var retorno2 = resolveProblema2();
-      alert(retorno2);
+              var retorno2 = resolveProblema2();
+              alert(retorno2);
 
-      var retorno3 = resolveProblema3();
-      alert(retorno3);
+              var retorno3 = resolveProblema3();
+              alert(retorno3);
 
-      //programação assincrona
+              //programação assincrona
 
-      /*function resolveProblema(callback) {
-        callback.call(null, "async");
-      }
+              /*function resolveProblema(callback) {
+                callback.call(null, "async");
+              }
 
-      function resolveProblema2(callback) {
-        callback.call(null, "async2");
-      }
+              function resolveProblema2(callback) {
+                callback.call(null, "async2");
+              }
 
-      function resolveProblema3(callback) {
-        callback.call(null, "async3");
-      }
+              function resolveProblema3(callback) {
+                callback.call(null, "async3");
+              }
 
-      resolveProblema(function (mensagem) {});
-      resolveProblema2();
-      resolveProblema3();*/
+              resolveProblema(function (mensagem) {});
+              resolveProblema2();
+              resolveProblema3();*/
 
       //2. Promises
       /*const promessa = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve("Pronto!");
-        }, 1000);
-      });
+                setTimeout(() => {
+                  resolve("Pronto!");
+                }, 1000);
+              });
 
-      promessa.then((mensagem) => {
-        console.log(mensagem);
-      });*/
+              promessa.then((mensagem) => {
+                console.log(mensagem);
+              });*/
+
+      /*--------------------------------------------------------------------------------------------------------*/
+
+      /*1. Dado o tamanho da base e da altura de um retângulo, calcular a sua área e o seu perímetro. */
+      /*const retangulo = new Promise((res, err) => {
+                let area, perimetro;
+                setTimeout(() => {
+                  const base = parseFloat(prompt("Informe a base do retângulo: "));
+                  const altura = parseFloat(prompt("Informe a altura do retângulo: "));
+
+                  if (isNaN(base) || isNaN(altura)) {
+                    err("Valores inválidos.");
+                  } else {
+                    //area
+                    area = base * altura;
+                    //perímetro
+                    perimetro = 2 * (base + altura);
+                    res({ area, perimetro });
+                  }
+                }, 1000);
+              });*/
+
+      /*retangulo
+                .then(({ area, perimetro }) => {
+                  console.log("A área do retângulo é: " + area);
+                  console.log("O perímetro do retângulo é: " + perimetro);
+                })
+                .catch((erro) => {
+                  console.error(erro);
+                });*/
+
+      /*2. Dado o tamanho do lado de um quadrado, calcular a área e o perímetro do mesmo.*/
+      /*const lado = document.getElementById("lado");
+              const calcularBtn = document.getElementById("calcularBtn");
+              const areaResult = document.getElementById("areaResult");
+              const perimetroResult = document.getElementById("perimetroResult");
+
+              calcularBtn.addEventListener("click", (event) => {
+                const valor = parseFloat(lado.value);
+                const quadrado = new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    //const lado = parseFloat(prompt("Informe o lado do quadrado: "));
+
+                    if (isNaN(valor)) {
+                      reject("Valor inválido!");
+                    } else {
+                      // área
+                      const area = valor * valor;
+                      //perímetro
+                      const perimetro = valor * 4;
+                      resolve({ area, perimetro });
+                    }
+                  }, 1000);
+                });
+
+                quadrado
+                  .then(({ area, perimetro }) => {
+                    areaResult.innerText = "Área: " + area;
+                    perimetroResult.innerText = "Perímetro: " + perimetro;
+                  })
+                  .catch((erro) => {
+                    areaResult.innerHTML = "Erro";
+                    perimetroResult.innerText = "Erro";
+                  });
+              });*/
+
+      /*3. Dado o tamanho do raio de uma circunferência, calcular a área e o perímetro da mesma.*/
+      /*const raio = document.getElementById("raio");
+              const btnCalcular = document.getElementById("btnCalcular");
+              const resultArea = document.getElementById("resultArea");
+              const resultPerimetro = document.getElementById("resultPerimetro");
+
+              btnCalcular.addEventListener("click", (event) => {
+                const valor = parseFloat(raio.value);
+                const circunferencia = new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    if (isNaN(valor)) {
+                      reject("Valor inválido!");
+                    } else {
+                      //área
+                      const area = 3.14 * valor * valor;
+                      //perímetro
+                      const perimetro = 2 * 3.14 * valor;
+                      resolve({ area, perimetro });
+                    }
+                  }, 1000);
+                });
+
+                circunferencia
+                  .then(({ area, perimetro }) => {
+                    resultArea.innerText = "Área: " + area;
+                    resultPerimetro.innerText = "Perímetro: " + perimetro;
+                  })
+
+                  .catch((erro) => {
+                    resultArea.innerText = "Error";
+                    resultPerimetro.innerText = "Error";
+                  });
+              });*/
+
+      /*4. Dado os três lados de um triângulo determinar o perímetro do mesmo.*/
+      /*const ladoTriangulo = document.getElementById("ladoTriangulo");
+              const btnCalculo = document.getElementById("btnCalculo");
+              const perimetroResultTriangulo = document.getElementById(
+                "perimetroResultTriangulo"
+              );
+
+              btnCalculo.addEventListener("click", (event) => {
+                const valorLado = parseFloat(ladoTriangulo.value);
+                const triangulo = new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    if (isNaN(valorLado)) {
+                      reject("Valor inválido!");
+                    } else {
+                      const perimetro = valorLado * 3;
+                      resolve(perimetro);
+                    }
+                  }, 1000);
+                });
+
+                triangulo
+                  .then((perimetro) => {
+                    perimetroResultTriangulo.innerText = "Perímetro: " + perimetro;
+                  })
+                  .catch((erro) => {
+                    perimetroResultTriangulo.innerText = erro;
+                  });
+              });*/
+
+      /*-------------------------------------------------------------------------------------------*/
 
       //3. async/await
       //É o jeito mais limpo de escrever código assíncrono
       /*const carregarDados = async () => {
-        console.log("Carregando...");
+                console.log("Carregando...");
 
-        const dados = await fetch(
-          "'http://www.omdbapi.com/?t=Inception&apikey=SUA_API_KEY'"
-        );
-        const json = await dados.json();
+                const dados = await fetch(
+                  "'http://www.omdbapi.com/?t=Inception&apikey=SUA_API_KEY'"
+                );
+                const json = await dados.json();
 
-        console.log("Dados recebidos: " + json);
-      };
+                console.log("Dados recebidos: " + json);
+              };
 
-      carregarDados();*/
+              carregarDados();*/
+
+      /*---------------------------------------------------------------------------------------------*/
+      /*5. Ler um número inteiro e exibir o seu sucessor.*/
+      /*const numeroInteiro = document.getElementById("numeroInteiro");
+      const btnSucessor = document.getElementById("btnSucessor");
+      const sucessorResultado = document.getElementById("sucessorResultado");
+
+      const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      btnSucessor.addEventListener("click", (event) => {
+        const valorInteiro = parseFloat(numeroInteiro.value);
+        const sucessor = async () => {
+          if (isNaN(valorInteiro)) {
+            alert("Valor inválido!");
+            return;
+          }
+
+          sucessorResultado.innerText = "Calculando...";
+          await delay(1000);
+
+          const sucessor = valorInteiro + 1;
+          sucessorResultado.innerText = `O sucessor de ${valorInteiro} é ${sucessor}`;
+        };
+        sucessor();
+      });*/
+
+      /*6. Ler dois números inteiros e exibir o quociente e o resto da divisão inteira entre eles.*/
+      /*const valor1 = document.getElementById("valor1");
+      const valor2 = document.getElementById("valor2");
+      const btnResto = document.getElementById("btnResto");
+      const quociente = document.getElementById("quociente");
+      const resto = document.getElementById("resto");
+
+      const pausa = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      btnResto.addEventListener("click", (event) => {
+        const numero1 = parseFloat(valor1.value);
+        const numero2 = parseFloat(valor2.value);
+
+        const restoQuociente = async () => {
+          if (isNaN(numero1) || isNaN(numero2)) {
+            alert("Valor inválido!");
+            return;
+          }
+          quociente.innerText = "Calculando...";
+          resto.innerText = "Calculando...";
+          await pausa(1000);
+
+          const quocienteDiv = numero1 / numero2;
+          const restoDiv = numero1 % numero2;
+
+          quociente.innerText = "O quociente da divisão é: " + quocienteDiv;
+          resto.innerText = "O resto da divisão é: " + restoDiv;
+        };
+        restoQuociente();
+      });*/
+
+      /*7. Solicitar a idade de uma pessoa em dias e informar na tela a idade em anos, meses e dias.*/
+      /*const idade = document.getElementById("idade");
+      const btnProcessar = document.getElementById("btnProcessar");
+      const anosC = document.getElementById("anosC");
+      const mesesC = document.getElementById("mesesC");
+      const diasC = document.getElementById("diasC");
+
+      const parada = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      btnProcessar.addEventListener("click", (event) => {
+        const calculoIdade = async () => {
+          const hoje = new Date();
+          const nascimento = new Date(idade.value);
+
+          let anos = hoje.getFullYear() - nascimento.getFullYear();
+          let meses = hoje.getMonth() - nascimento.getMonth();
+          let dias = hoje.getDate() - nascimento.getDate();
+
+          if (dias < 0) {
+            meses--;
+            dias += new Date(hoje.getFullYear(), hoje.getMonth(), 0).getDate();
+          }
+
+          if (meses < 0) {
+            anos--;
+            meses += 12;
+          }
+
+          await parada(1000);
+
+          anosC.innerText = "A idade em anos é: " + anos;
+          mesesC.innerText = "A idade em meses é: " + meses;
+          diasC.innerText = "A idade em dias é: " + dias;
+        };
+        //calculoIdade();
+      });*/
+
+      /*8. Dado que a fórmula para conversão de Fahrenheit para Celsius é C = 5/9 (F – 32), leu um
+              valor de temperatura em Fahrenheit e exibi-lo em Celsius*/
+      /*const lerFahrenheit = document.getElementById("lerFahrenheit");
+      const btnConverter = document.getElementById("btnConverter");
+      const resultadoCelsius = document.getElementById("resultadoCelsius");
+
+      const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      btnConverter.addEventListener("click", (event) => {
+        const fahrenheit = parseFloat(lerFahrenheit.value);
+
+        const conversor = async () => {
+          let convercao = (fahrenheit - 32) / 1.8;
+
+          resultadoCelsius.innerText = "Convertendo...";
+
+          await delay(1000);
+
+          resultadoCelsius.innerText = `O valor ${fahrenheit} convertido para Celsius é ${convercao.toFixed(
+            4
+          )}`;
+        };
+        // conversor();
+      });*/
 
       //4. Usando setTimeout (simulação assíncrona simples):
       /*let senha = 123;
-      console.log();
-      senha = parseInt(prompt("Informe a senha: "));
-      setTimeout(() => {
-        if (senha === 123) {
-          alert("Acesso logado.");
-        } else {
-          alert("Senha incorreta!");
-        }
-      }, 3000);
+              console.log();
+              senha = parseInt(prompt("Informe a senha: "));
+              setTimeout(() => {
+                if (senha === 123) {
+                  alert("Acesso logado.");
+                } else {
+                  alert("Senha incorreta!");
+                }
+              }, 3000);*/
 
-      console.log("Inicio");
-      setTimeout(() => {
-        console.log("Executou depois de 2 segundos");
-      }, 2000);
-      console.log("Fim");*/
+      /*console.log("Inicio");
+              setTimeout(() => {
+                console.log("Executou depois de 2 segundos");
+              }, 2000);
+              console.log("Fim");*/
 
-      //5.Usando setInterval (executando de tempos em tempos):
-      /*setInterval(() => {
-        console.log("Executando a cada 1 segundo");
-      }, 1000);*/
+      /*//5.Usando setInterval (executando de tempos em tempos):
+              setInterval(() => {
+                console.log("Executando a cada 1 segundo");
+              }, 1000);*/
 
       //6.Criando uma Promise básica:
       /*const promessa = new Promise((resolve) => {
-        setTimeout(() => {
-          resolve("Promessa resolvida!");
-        }, 1500);
-      });
+                setTimeout(() => {
+                  resolve("Promessa resolvida!");
+                }, 1500);
+              });
 
-      promessa.then((msg) => console.log(msg));*/
+              promessa.then((msg) => console.log(msg));*/
+
+      /*9. Faça um algoritmo que calcule e apresente o valor do volume de uma lata de óleo, dado 
+        seu raio e sua altura.*/
+      /*const raio = document.getElementById("raioLatas");
+      const altura = document.getElementById("altura");
+      const btnCalcularVolume = document.getElementById("btnCalcularVolume");
+      const volumesResult = document.getElementById("volumesResult");
+
+      btnCalcularVolume.addEventListener("click", (event) => {
+        //debugger;
+        let raios = parseFloat(raio.value);
+        let alturas = parseFloat(altura.value);
+
+        const volumeLataOleo = new Promise((resolve) => {
+          setTimeout(() => {
+            const volume = 3.14 * (raios * raios) * alturas;
+            resolve(volume);
+          }, 1500);
+        });
+
+        volumeLataOleo.then((volume) => {
+          alert("Cálculo do volume finalizado!");
+          volumesResult.innerText = "Volume da lata é: " + volume;
+        });
+      });*/
 
       //6.Promise com reject:
       /*const promessaErro = new Promise((resolve, reject) => {
-        let sucesso = false;
+                let sucesso = false;
 
-        if (sucesso) {
-          resolve("Sucesso!");
-        } else {
-          reject("Ocorreu um erro.");
-        }
+                if (sucesso) {
+                  resolve("Sucesso!");
+                } else {
+                  reject("Ocorreu um erro.");
+                }
+              });
+
+              promessaErro
+                .then((res) => console.log(res))
+                .catch((err) => console.log(err));*/
+
+      //10. Converter um inteiro informado menor que 32 para sua representação em binário
+      const valorInt = document.getElementById("valorInt");
+      const btnBinario = document.getElementById("btnBinario");
+      const binarioResult = document.getElementById("binarioResult");
+
+      btnBinario.addEventListener("click", (event) => {
+        let valorInteiro = parseFloat(valorInt.value);
+
+        const converteBinario = new Promise((resolve, reject) => {
+          const valorBinario = valorInteiro.toString(2);
+
+          if (valorInteiro < 32) {
+            resolve(valorBinario);
+          } else {
+            reject("Informe um valor menor que 32!");
+          }
+        });
+
+        converteBinario
+          .then((valorBinario) => {
+            binarioResult.innerText = `O valor ${valorInteiro} em binário é: ${valorBinario}`;
+          })
+          .catch((err) => {
+            alert(err);
+          });
       });
-
-      promessaErro
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));*/
 
       //7.Encadeando .then() (Promise chaining):
       /*new Promise((resolve) => {
-        setTimeout(() => resolve(5), 1000);
-      })
-        .then((valor) => valor * 2)
-        .then((valor) => valor + 3)
-        .then((resultado) => console.log(resultado));
-      */
+                setTimeout(() => resolve(5), 1000);
+              })
+                .then((valor) => valor * 2)
+                .then((valor) => valor + 3)
+                .then((resultado) => console.log(resultado));*/
 
       //8.Função assíncrona com async/await:
       /*async function exemplo() {
-        const resultado = await Promise.resolve("Com await!");
-        console.log(resultado);
-      }
-      exemplo();*/
+                const resultado = await Promise.resolve("Com await!");
+                console.log(resultado);
+              }
+              exemplo();*/
 
       //9.Usando fetch com .then():
-      /*fetch("https://jsonplaceholder.typicode.com/posts/1")
-        .then((res) => res.json())
-        .then((data) => console.log(data));*/
+      /*
+              fetch("https://jsonplaceholder.typicode.com/posts/1")
+                .then((res) => res.json())
+                .then((data) => console.log(data));*/
 
       //10.Usando fetch com async/await:
       /*async function buscarPost() {
-        const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
-        const post = await res.json();
-        console.log(post);
-      }
-      buscarPost();*/
+                debugger;
+                const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+                const post = await res.json();
+                console.log(post);
+              }
+              buscarPost();*/
 
       //10.Função que simula uma tarefa demorada com Promise:
       /*const esperar = (ms) => {
-        return new Promise((resolve) => setTimeout(resolve, ms));
-      };
+                return new Promise((resolve) => setTimeout(resolve, ms));
+              };
 
-      async function executar() {
-        console.log("Esperando...");
-        await esperar(2000);
-        console.log("Terminou a espera!");
-      }
-      executar();*/
+              async function executar() {
+                console.log("Esperando...");
+                await esperar(2000);
+                console.log("Terminou a espera!");
+              }
+              executar();*/
 
       //11.Promise com finally():
       /*Promise.resolve("OK")
-        .then((res) => console.log(res))
-        .finally(() => console.log("Sempre executa no final"));*/
+                .then((res) => console.log(res))
+                .finally(() => console.log("Sempre executa no final"));*/
 
-      //12.Tratando erro com try/catch e async/await:
-      /*async function exemploErro() {
-        try {
-          const res = await fetch("https://api.invalida.com");
-          const dados = await res.json();
-          console.log(dados);
-        } catch (erro) {
-          console.log("Erro ao buscar dados: " + erro);
-        }
-      }
-      exemploErro();*/
+      /*//12.Tratando erro com try/catch e async/await:
+              async function exemploErro() {
+                debugger;
+                try {
+                  const res = await fetch("https://api.invalida.com");
+                  const dados = await res.json();
+                  console.log(dados);
+                } catch (erro) {
+                  console.log("Erro ao buscar dados: " + erro);
+                }
+              }
+              exemploErro();*/
 
       //13.Usando .all() para múltiplas Promises:
       /*Promise.all([
-        fetch("https://jsonplaceholder.typicode.com/posts/1").then((r) =>
-          r.json()
-        ),
-        fetch("https://jsonplaceholder.typicode.com/posts/2").then((r) =>
-          r.json()
-        ),
-      ]).then((resultados) => {
-        console.log("Posts:" + resultados);
-      });*/
+                fetch("https://jsonplaceholder.typicode.com/posts/1").then((r) =>
+                  r.json()
+                ),
+                fetch("https://jsonplaceholder.typicode.com/posts/2").then((r) =>
+                  r.json()
+                ),
+              ]).then((resultados) => {
+                console.log("Posts:", resultados);
+              });*/
 
       //14.Usando Promise.race() (retorna o mais rápido)
       /*const p1 = new Promise((r) => setTimeout(() => r("Primeira"), 3000));
-      const p2 = new Promise((r) => setTimeout(() => r("Segunda"), 1000));
+              const p2 = new Promise((r) => setTimeout(() => r("Segunda"), 1000));
 
-      Promise.race([p1, p2]).then((res) => console.log(res));*/
+              Promise.race([p1, p2]).then((res) => console.log(res));*/
 
       //15.Delay com função assíncrona reutilizável
       /*const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-      async function animarTexto() {
-        console.log("Carregando...");
-        await delay(1000);
-        console.log("Quase lá...");
-        await delay(3000);
-        console.log("Pronto!");
-      }
-      animarTexto();*/
+              async function animarTexto() {
+                debugger;
+                console.log("Carregando...");
+                await delay(1000);
+                console.log("Quase lá...");
+                await delay(3000);
+                console.log("Pronto!");
+              }
+              animarTexto();*/
 
       //16.Exemplo prático simulando carregamento de API:
-      async function carregarUsuario(id) {
-        console.log("Buscando usuário...");
-        const resposta = await fetch(
-          `https://jsonplaceholder.typicode.com/users/${id}`
-        );
-        const usuario = await resposta.json();
-        console.log("Usuário encontrado: " + usuario.name);
-      }
-      carregarUsuario(3);
+      /*async function carregarUsuario(id) {
+                debugger;
+                console.log("Buscando usuário...");
+                const resposta = await fetch(
+                  `https://jsonplaceholder.typicode.com/users/${id}`
+                );
+                const usuario = await resposta.json();
+                console.log("Usuário encontrado: " + usuario.name);
+              }
+              carregarUsuario(3);*/
     </script>
   </body>
 </html>
