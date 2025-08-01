@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Desafios Básicos com Promises</h1>
+    <div>
+      <h1>
+        1.Simular um atraso de 2 segundos e exibir "Processo concluído!" no
+        console.
+      </h1>
+    </div>
+
+    <div>
+      <h1>
+        2.Ler dois números do usuário, somar e exibir o resultado após 1 segundo
+        usando Promise.
+      </h1>
+      <label for="valor1">Valor 1:</label>
+      <input type="number" id="valor1" />
+      <br />
+      <label for="valor2">Valor 2:</label>
+      <input type="number" id="valor2" />
+      <button type="button" id="btnCalcular">Calcular</button>
+      <p id="somaResultado"></p>
+    </div>
+
+    <div>
+      <h1>
+        3.Criar uma função que retorne uma Promise rejeitada se um número for
+        negativo.
+      </h1>
+
+      <label for="valor">Valor:</label>
+      <input type="number" id="valor" />
+      <button type="button" id="btnVerificar">Verificar</button>
+      <p id="result"></p>
+    </div>
+
+    <div>
+      <h1>
+        4.Criar uma Promise que simula o carregamento de dados de um usuário e
+        resolve com o nome "Maria".
+      </h1>
+
+      <label for="nome">Nome:</label>
+      <button type="button" id="btnCarregar">Carregar</button>
+      <p id="nome"></p>
+    </div>
+
+    <div>
+      <h1>
+        5.Criar uma função que simula uma verificação de login (usuário/senha)
+        usando Promise.
+      </h1>
+
+      <label for="nomeLogin">Nome:</label>
+      <input type="text" id="nomeLogin" />
+      <br />
+      <label for="senhaLogin">Senha:</label>
+      <input type="text" id="senhaLogin" />
+      <button type="button" id="btnChecagem">Checar</button>
+      <p id="checaNome"></p>
+      <p id="checaSenha"></p>
+    </div>
+    <h1>Desafios com async/await</h1>
+
+    <div>
+      <h1>
+        2.Criar uma função esperarMensagem() que aguarde 3 segundos e depois
+        mostre "Olá, mundo!" com async/await.
+      </h1>
+
+      <label for="mensagem">Mensagem:</label>
+      <p id="mensagem"></p>
+      <button type="btnMensagem" id="btnMensagem">Exibir Mensagem</button>
+    </div>
+
+    <div>
+      <h1>
+        3.Criar uma função que simula converter Celsius para Fahrenheit após 2
+        segundos e retornar o resultado.
+      </h1>
+
+      <label for="celsius">Celsius:</label>
+      <input type="number" id="celsius" />
+      <button type="button" id="btnConverter">Converter</button>
+      <p id="resultado"></p>
+    </div>
+
+    <div>
+      <h1>
+        4.Criar uma função assíncrona que simula uma operação de banco: se o
+        saldo for suficiente, debita e mostra novo saldo; senão, lança erro.
+      </h1>
+
+      <label for="mensagem">Saque bancário</label>
+      <br />
+      <label for="valorSaque">Valor Saque:</label>
+      <input type="number" id="valorSaque" />
+      <button type="button" id="btnProcessar">Processar</button>
+      <br />
+      <br />
+      <label for="saldo">Saldo Atual:</label>
+      <p id="saldo"></p>
+    </div>
+
+    <div>
+      <h1>
+        5.Simular duas tarefas paralelas (ex: baixar arquivo A e B), e aguardar
+        ambas usando Promise.all com async/await.
+      </h1>
+
+      <h2>Simulação de Download Paralelo</h2>
+      <button id="btnBaixar">Baixar Arquivos</button>
+      <div id="status"></div>
+    </div>
+
+    <div>
+      <h1>
+        1. Usar fetch para consultar a API pública de usuários (ex:
+        https://jsonplaceholder.typicode.com/users) e exibir os nomes no DOM.
+      </h1>
+
+      <button type="button" id="btnConsultar">Consultar</button>
+      <p id="resultadoConsulta"></p>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div>
+      <h1>
+        /2. Criar uma função que busca um CEP com a API ViaCEP e mostra cidade e
+        estado usando async/await.
+      </h1>
+      <label for="cep">Informe o CEP:</label>
+      <input type="number" id="inputCep" />
+      <button type="button" id="btnBuscar">Buscar</button>
+      <p id="retornoBusca"></p>
+      <p id="retornoBuscaEstado"></p>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+    </div>
+    <script>
+      /*Aqui estão 20 desafios de programação voltados para prática com Promises e
+          async/await, ideais para quem está estudando programação assíncrona em JavaScript:*/
+
+      /*1.Simular um atraso de 2 segundos e exibir "Processo concluído!" no
+          console.*/
+      const segundos = (sg) =>
+        new Promise((resolve) => setTimeout(resolve, sg));
+
+      const atraso = async () => {
+        await segundos(2000);
+        console.log("Processo concluído!");
+      };
+      //atraso();
+
+      /*
+          2.Ler dois números do usuário, somar e exibir o resultado após 1 segundo
+          usando Promise.
+        */
+      const valor1 = document.getElementById("valor1");
+      const valor2 = document.getElementById("valor2");
+      const btnCalcular = document.getElementById("btnCalcular");
+      const somaResultado = document.getElementById("somaResultado");
+
+      const delay = (s) => new Promise((resolve) => setTimeout(resolve, s));
+
+      btnCalcular.addEventListener("click", (event) => {
+        const valor_1 = parseFloat(valor1.value);
+        const valor_2 = parseFloat(valor2.value);
+
+        const soma = async () => {
+          const soma = valor_1 + valor_2;
+
+          await delay(1000);
+
+          somaResultado.innerText = `O resultado do cálculo é:` + soma;
+        };
+        soma();
+      });
+
+      /*3.Criar uma função que retorne uma Promise rejeitada se um número for
+        negativo.*/
+      const valor = document.getElementById("valor");
+      const btnVerificar = document.getElementById("btnVerificar");
+      const result = document.getElementById("result");
+
+      btnVerificar.addEventListener("click", (event) => {
+        let valorInformado = parseFloat(valor.value);
+
+        const verificacaoNegativo = new Promise((resolve, reject) => {
+          if (valorInformado >= 0) {
+            resolve("Não é negativo!");
+          } else {
+            reject("Valor negativo rejeitado!");
+          }
+        });
+        verificacaoNegativo
+          .then((valorInformado) => {
+            result.innerText = `O valor informado é ${valorInformado}`;
+          })
+          .catch((err) => {
+            result.innerText = err;
+          });
+      });
+
+      /*
+        4.Criar uma Promise que simula o carregamento de dados de um usuário e
+        resolve com o nome "Maria".
+      */
+
+      const btnCarregar = document.getElementById("btnCarregar");
+      const nome = document.getElementById("nome");
+
+      btnCarregar.addEventListener("click", (event) => {
+        const carregarDados = new Promise((resolve, reject) => {
+          let nomes = "Maria";
+          resolve(nomes);
+        });
+
+        carregarDados
+          .then((nomes) => {
+            nome.innerText = nomes;
+          })
+          .catch((err) => {
+            nome.innerText = err;
+          });
+      });
+
+      /*
+        5.Criar uma função que simula uma verificação de login (usuário/senha)
+        usando Promise.
+      */
+      const nomeLogin = document.getElementById("nomeLogin");
+      const senhaLogin = document.getElementById("senhaLogin");
+      const btnChecagem = document.getElementById("btnChecagem");
+      const checaNome = document.getElementById("checaNome");
+      const checaSenha = document.getElementById("checaSenha");
+
+      btnChecagem.addEventListener("click", (event) => {
+        const nomesLogin = nomeLogin.value;
+        const senhasLogin = senhaLogin.value;
+
+        const login = new Promise((resolve, reject) => {
+          if (isNaN(nomesLogin)) {
+            resolve({ nome: nomesLogin, senha: senhasLogin });
+          } else {
+            reject("Informe um valor válido!");
+          }
+        });
+        login
+          .then(({ nome, senha }) => {
+            checaNome.innerText = `O nome informado é: ${nome}`;
+            checaSenha.innerText = `A senha informada é: ${senha}`;
+          })
+          .catch((err) => {
+            alert(err);
+          });
+      });
+
+      //Desafios com async/await
+
+      /*1.Refatore o desafio 1 usando async/await.*/
+      const segundo = (sg) => new Promise((resolve) => setTimeout(resolve, sg));
+
+      const atrasos = async () => {
+        await segundos(2000);
+        console.log("Processo concluído!");
+      };
+      //atrasos();
+
+      /*2.Criar uma função esperarMensagem() que aguarde 3 segundos e depois mostre "Olá, mundo!" com async/await.*/
+      const btnMensagem = document.getElementById("btnMensagem");
+      const mensagem = document.getElementById("mensagem");
+
+      const aguardar = (segundos) =>
+        new Promise((resolve) => setTimeout(resolve, segundos));
+
+      btnMensagem.addEventListener("click", (event) => {
+        const esperarMensagem = async () => {
+          const mensageria = "Olá, mundo!";
+          await aguardar(3000);
+          mensagem.innerText = `${mensageria}`;
+        };
+        //esperarMensagem();
+      });
+
+      /*3.Criar uma função que simula converter Celsius para Fahrenheit
+      após 2 segundos e retornar o resultado.*/
+      const celsius = document.getElementById("celsius");
+      const btnConverter = document.getElementById("btnConverter");
+      const resultado = document.getElementById("resultado");
+
+      const parada = (sg) => new Promise((resolve) => setTimeout(resolve, sg));
+
+      btnConverter.addEventListener("click", (event) => {
+        const valorCelsius = parseFloat(celsius.value);
+
+        const conversor = async () => {
+          if (isNaN(valorCelsius)) {
+            alert("Valor inválido!");
+          } else {
+            const fahrenheit = valorCelsius * 1.8 + 32;
+            await parada(2000);
+            resultado.innerText = `Valor convertido para F°: ${fahrenheit}`;
+          }
+        };
+        conversor();
+      });
+
+      /*4.Criar uma função assíncrona que simula uma operação de banco: se o saldo for suficiente,
+      debita e mostra novo saldo; senão, lança erro.*/
+      const valorSaque = document.getElementById("valorSaque");
+      const btnProcessar = document.getElementById("btnProcessar");
+      let saldos = document.getElementById("saldo");
+      saldos.innerText = 200;
+
+      const carregamentoProcesso = (s) =>
+        new Promise((resolve) => setTimeout(resolve, s));
+
+      btnProcessar.addEventListener("click", (event) => {
+        const operacaoBancaria = async () => {
+          const valorS = parseFloat(valorSaque.value);
+          const saldoAtual = parseFloat(saldos.innerText.replace("R$", ""));
+
+          if (saldoAtual < valorS) {
+            alert("Saldo insuficiente!!!");
+          } else {
+            alert("Aguarde, processando!");
+
+            const total = saldoAtual - valorS;
+
+            await carregamentoProcesso(3000);
+
+            saldos.innerText = total;
+          }
+        };
+        operacaoBancaria();
+      });
+
+      /*5.Simular duas tarefas paralelas (ex: baixar arquivo A e B), e aguardar ambas usando Promise.all com async/await.*/
+      baixarArquivo = (nome, tempo) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            atualizarStatus(`✅ ${nome} finalizado.`);
+            resolve(`${nome} pronto`);
+          }, tempo);
+        });
+      };
+
+      atualizarStatus = (mensagem) => {
+        const status = document.getElementById("status");
+        const p = document.createElement("p");
+
+        p.textContent = mensagem;
+        status.appendChild(p);
+      };
+
+      document
+        .getElementById("btnBaixar")
+        .addEventListener("click", async () => {
+          document.getElementById("status").innerHTML = "";
+          atualizarStatus("⏳ Iniciando downloads...");
+
+          const promessaA = baixarArquivo("Arquivo A", 2000);
+          const promessaB = baixarArquivo("Arquivo B", 3000);
+
+          const resultados = await Promise.all([promessaA, promessaB]);
+
+          atualizarStatus("🎉 Todos os downloads concluídos!");
+          alert(resultados);
+        });
+
+      //Desafios com APIs simuladas ou reais
+      /*1. Usar fetch para consultar a API pública de usuários (ex: https://jsonplaceholder.typicode.com/users) e exibir os nomes no DOM.*/
+      btnConsultar.addEventListener("click", (event) => {
+        const consulta = async () => {
+          const dadosApi = await fetch(
+            "https://jsonplaceholder.typicode.com/users/"
+          );
+
+          const jSon = await dadosApi.json();
+          //dados dos usuários
+          resultadoConsulta.innerText = JSON.stringify(jSon, null, 2);
+          //nome de cada usuário
+          //resultadoConsulta.innerText = jSon.map(user => user.name).join(", ");
+          //cria uma lista
+          /*resultadoConsulta.innerHTML = jSon
+            .map((user) => `<p>${user.name}</p>`)
+            .join("");*/
+          //console.log(jSon);
+        };
+        consulta();
+      });
+
+      /*2. Criar uma função que busca um CEP com a API ViaCEP e mostra cidade e estado usando async/await.*/
+      const btnBuscar = document.getElementById("btnBuscar");
+      const retornoBusca = document.getElementById("retornoBusca");
+
+      btnBuscar.addEventListener("click", (event) => {
+        const cep = document.getElementById("inputCep").value.trim();
+        buscaCep = async () => {
+          if (!/^\d{8}/.test(cep)) {
+            retornoBusca.innerText = "Digite um CEP válido com 8 números.";
+          }
+
+          try {
+            const resposta = await fetch(
+              `https://viacep.com.br/ws/${cep}/json/`
+            );
+
+            if (!resposta.ok) throw new Error("Erro ao consultar o CEP.");
+
+            const dados = await resposta.json();
+
+            if (dados.erro) {
+              retornoBusca.innerText = "CEP não encontrado.";
+            } else {
+              retornoBusca.innerText = `${dados.localidade} - ${dados.uf}`;
+            }
+          } catch (erro) {
+            retornoBusca.innerText = "Erro: " + erro.message;
+          }
+        };
+
+        buscaCep();
+      });
+
+      /*3. Criar um simulador de verificação de e-mail (aleatório: válido/inválido) com Promise.*/
+
+      /*4. Criar um botão que, ao clicar, simula uma busca de produtos com delay e mostra "Produtos carregados!".*/
+
+      /*5. Criar uma função que verifica se um nome existe numa lista (simulada via Promise) e retorna ou rejeita.*/
+    </script>
+  </body>
+</html>

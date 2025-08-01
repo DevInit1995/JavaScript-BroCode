@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orientação a objetos</title>
+  </head>
+  <body>
+    <body>
+      <label for="nomeFilme">Nome filme:</label>
+      <input type="text" id="nomeFilme" placeholder="Adrenalina" disabled />
+      <br />
+      <label for="duracaoFilme">Duracao filme:</label>
+      <input type="text" id="duracaoFilme" placeholder="1:30" disabled />
+      <br />
+      <label for="indicacaoFilme">Indicação filme:</label>
+      <input type="number" id="indicacaoFilme" placeholder="14" disabled />
+      <br />
+      <label for="idadePessoa">Idade pessoa:</label>
+      <input type="numer" id="idadePessoa" />
+      <button type="button" id="btnAssistir">Assistir</button>
+    </body>
+
+    <script>
+      class Filmes {
+        constructor(nomeFilme, duracaoFilme, indicacaoFilme) {
+          this.nome = nomeFilme;
+          this.duracao = duracaoFilme;
+          this.indicacao = indicacaoFilme;
+          this.idade = null;
+        }
+
+        idadePessoas = () => {
+          let idade = document.getElementById("idadePessoa");
+          const btnAssistir = document.getElementById("btnAssistir");
+
+          btnAssistir.addEventListener("click", () => {
+            this.idadeP = parseInt(idade.value);
+            if (this.idadeP < this.indicacao) {
+              alert("Você não tem idade para ver esse filme");
+            } else {
+              alert("Liberado");
+            }
+          });
+        };
+      }
+
+      //instancia
+      const filmeAcao = new Filmes("Adrenalina", 1.3, "14");
+
+      filmeAcao.idadePessoas();
+
+      console.log(
+        filmeAcao.nome,
+        filmeAcao.duracao,
+        filmeAcao.indicacao,
+        filmeAcao.idade
+      );
+    </script>
+  </body>
+</html>
